@@ -14,7 +14,7 @@ const ProductAll =  ({authenticate}) => {
     let data;
     // fetch 실패 시에, 예외처리 잘 안됨 ...!
     try{
-        let url = `http://localhost:5000/products?q=${searchQuery}`;
+        let url = `https://my-json-server.typicode.com/kimvs2001/2023-03-13-coalnoo-hnm/products?q=${searchQuery}`;
         let response = await fetch(url);
         data=await response.json();
         data && setProductList(data);

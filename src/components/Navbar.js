@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-//상단메뉴 만들기 13분 까지 봤당
+// 제품 검색 후,  새로고침하면, 검색창에 단어는 삭제 되었는데
+// 제품은 계속 검색 된것만 나오는데?
+//  -> url  수정 하도록 코드 수정 필요.
 const Navbar = () => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
 
@@ -47,6 +49,7 @@ const Navbar = () => {
             placeholder='제품검색'
             className='search-box'
             type="text">
+              
             </input>
            
 
