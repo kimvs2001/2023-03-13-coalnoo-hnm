@@ -17,6 +17,7 @@ const ProductDetail = ({item}) => {
     getProductDetail();
   },[])
   // 23.04.07 옵션널 체이닝에서 오류나서, 버전 업그레이드 필요.
+  //  react-script 4.0.0 으로ㅓ 버전 업그레이드. ok.
   return (
     <Container>
       <Row>

@@ -25,6 +25,13 @@
     justify-content: center;
 }
 
+/* 요로케 하면 되네..!? 2023.04.13*/
+@media screen and (max-width: 63rem){
+    .menu-list{
+        visibility: hidden;
+    }
+}
+
 .search-box{
     border :none;
     border-bottom: 1px solid black;
@@ -63,4 +70,8 @@
 .product-img{
     display: flex;
     justify-content: flex-end;
+}
+
+.logo{
+    cursor: pointer;
 }

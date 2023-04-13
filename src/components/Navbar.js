@@ -22,6 +22,9 @@ const Navbar = () => {
       navigate(`/?q=${keyword}`);
     }
   }
+  const goToHome=()=>{
+    navigate('/');
+  }
   return (
     <div>
       <div/>
@@ -32,7 +35,7 @@ const Navbar = () => {
         <div>로그인</div>      
       </div>
       <div className="nav-section">
-      <img width={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeeLHwvqjBT_tqo6-ZACuZMnxxDWeex4YZuUgfEMLBYw&s"></img>
+      <img className='logo' onClick={goToHome} width={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeeLHwvqjBT_tqo6-ZACuZMnxxDWeex4YZuUgfEMLBYw&s"></img>
       </div>
       <div className='menu-area'>
        
