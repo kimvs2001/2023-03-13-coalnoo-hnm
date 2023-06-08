@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -6,13 +6,27 @@ import { useNavigate } from 'react-router-dom';
 // 제품 검색 후,  새로고침하면, 검색창에 단어는 삭제 되었는데
 // 제품은 계속 검색 된것만 나오는데?
 //  -> url  수정 하도록 코드 수정 필요.
-const Navbar = () => {
+const Navbar = ({authenticate}) => {
   const menuList = ['여성','Divided','남성','신생아/유아','아동','H&M Home','Sale','지속가능성'];
 
   const navigate = useNavigate();
+  const [loginLogout , setLoginLogout] = useState('로그인');
   const goToLogin=()=>{
+
     navigate("/login");
+    
   }
+
+
+  useEffect(()=>{
+    if(authenticate){
+      setLoginLogout('로그아웃');
+    }
+    else{
+      setLoginLogout('로그인');
+      
+    }
+   },[authenticate])
   const search=(event)=>{
     if(event.key === "Enter"){
       // 입력한 검색어를 읽어와서
@@ -32,7 +46,7 @@ const Navbar = () => {
         <div>
          <FontAwesomeIcon icon={faUser}/>
         </div>
-        <div>로그인</div>      
+        <div>{loginLogout}</div>      
       </div>
       <div className="nav-section">
       <img className='logo' onClick={goToHome} width={100} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeeLHwvqjBT_tqo6-ZACuZMnxxDWeex4YZuUgfEMLBYw&s"></img>
